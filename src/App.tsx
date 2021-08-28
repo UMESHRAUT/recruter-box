@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from 'react-router';
+import { Redirect } from 'react-router-dom';
+import './styles/app.scss';
+import Toaster from './components/toaster/Toaster';
+import PrivateRoutes from './routers/PrivateRoutes';
+import PublicRoutes from './routers/PublicRoutes';
+import EmployeeLogin from './components/auth/EmployeeLogin';
+import GoogleLoginProgress from './components/auth/GoogleLoginProgress';
+import Dashboard from './components/dashboard/Dashboard';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Toaster />
+
+      <Switch>
+        <PrivateRoutes path="/dashboard" component={Dashboard} />
+
+        <PublicRoutes exact path="/login" component={EmployeeLogin} />
+
+        <PublicRoutes path="/google-login" component={GoogleLoginProgress} />
+
+        <Route render={() => <Redirect to='/dashboard' />} />
+      </Switch>
+    </>
   );
 }
+
 
 export default App;
