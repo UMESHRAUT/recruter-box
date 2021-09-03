@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+@import '../../styles/typography/typography-utils';
+
+// loader
+.loading-content {
+  background: $secondary-bg;
+  box-shadow: $shadow-header;
+  border-radius: $border-radius-default;
+  border: 1px solid $divider-color;
+  padding: $spacer/2;
+  display: flex;
+  white-space: nowrap;
+  width: 100%;
+  color: $text-primary;
+
+  img {
+    float: left;
+  }
+
+  .loading-text {
+    float: left;
+    padding-left: 15px;
+    @include typography-level-to-styles(typography-config(), body-1);
+    div:last-child {
+      margin-top: $spacer;
+      color: $text-primary;
+    }
+  }
+}
+
+.inline-items {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

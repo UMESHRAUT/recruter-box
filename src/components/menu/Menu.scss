@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.menu-container {
+  z-index: $zindex-dropdown;
+  min-width: 160px;
+  box-shadow: $shadow-dropdown;
+  background: $surface-bg-secondary;
+  border: solid 1px $menu-border-color;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+}
+.MenuContainer{
+  left: 104px !important;
+}
+
+.menu-icon {
+  margin-right: $spacer * 0.75;
+}

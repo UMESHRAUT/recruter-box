@@ -1,0 +1,2 @@
+export const SAVE_FORM_DATA = 'SAVE_FORM_DATA';
+export const ALL_POSITIONS = 'ALL_POSITIONS';

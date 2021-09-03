@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.form-error {
+  display: flex;
+  align-items: center;
+  padding: $spacer * 0.5 $spacer * 0.75;
+  color: $light-text;
+  font-weight: $font-weight-medium;
+  border-radius: $border-radius-md;
+  background: $error;
+}
+
+.form-error-thumbnail {
+  flex-shrink: 0;
+  font-size: $icon-size-base * 1.25;
+  margin-right: $spacer * 0.75;
+}

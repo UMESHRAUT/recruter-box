@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+@import '../../styles/typography/typography-utils';
+
+$arrow-img-w: 8px;
+$arrow-img-h: $arrow-img-w * 2;
+$arrow-inner-offset: 2px;
+$arrow-side-offset: $spacer / 2;
+$popup-offset: -2px;
+
+$arrow-visible-h: $arrow-img-h * (1 - $arrow-inner-offset / $arrow-img-w);
+
+.popup-wrapper {
+  position: relative;
+  z-index: $zindex-popover;
+}
+
+.popup {
+  width: auto;
+  max-width: 256px;
+  max-height: 500px;
+  overflow: auto;
+  background-color: $tooltip-bg;
+  box-shadow: $shadow-tooltip;
+  padding: $popup-padding;
+  border-radius: $border-radius-default;
+  transition: all 200ms ease;
+  position: relative;
+}
+
+.popup-header {
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacer / 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popup-wrapper.p-start.a-center,
+.popup-wrapper.p-end.a-center {
+  &::after {
+    top: calc(50% - #{$arrow-img-h / 2});
+  }
+}
+
+.popup-wrapper.dark {
+  .popup {
+    background-color: #2a2f62;
+  }
+  &::after {
+    border-right-color: #2a2f62;
+  }
+}
+
+.config-popup {
+  background-color: $surface-bg;
+  max-width: 384px;
+  .config-popup-action {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  .config-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .config {
+    border-bottom: dashed 1px $divider-color;
+    margin-bottom: $spacer / 2;
+    word-wrap: break-word;
+    width: 100%;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

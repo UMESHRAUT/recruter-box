@@ -1,0 +1,143 @@
+.co-location {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semi-bold;
+  color: $text-primary;
+  line-height: normal;
+}
+
+.location-wrapper .category-list-h {
+  padding: 0;
+  padding-bottom: $spacer * 2;
+  margin-left: -$spacer;
+}
+
+.career-openings-container {
+  .stickem-container {
+    position: relative;
+      min-height: 360px;
+  }
+
+  .search-input-container {
+      padding-right: $spacer * 2.5;
+ }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .page-body {
+    display: flex;
+  }
+
+  .page-body-left {
+    position: relative;
+
+    border-right: 1px solid $default-border;
+    width: 220px;
+    flex-shrink: 0;
+
+  }
+
+  .page-body-right {
+      flex: 1;
+      margin-left: $spacer * 2.5;
+  }
+}
+
+.careers-filters-container {
+    position: sticky;
+}
+
+.opening-card-wrapper {
+  display: none;
+  border-top: solid 1px $default-border;
+
+
+  &.active {
+    display: block;
+  }
+  &:last-child {
+    border-bottom: solid 1px $default-border;
+  }
+
+    border: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: $spacer;
+    &:last-child {
+      border: 0;
+      margin-bottom: 0;
+  }
+}
+
+.opening-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: $spacer;
+
+    flex-direction: row;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    border-radius: $border-radius-lg;
+    align-items: center;
+
+    .card-position {
+      flex: 1;
+    }
+
+    .card-loc {
+      min-width: 160px;
+      margin-right: $spacer * 1.25;
+      margin-left: $spacer * 1.25;
+      flex: 0;
+    }
+}
+
+.openings-category-header {
+  display: flex;
+  align-items: center;
+  font-size: $font-size-body;
+  color: $text-primary;
+}
+
+.center-line {
+  content: "";
+  flex-grow: 1;
+  margin-left: $spacer;
+  height: 1px;
+  border-bottom: solid 1px $default-border;
+}
+
+.opening-card-wrapper.active + .openings-category-header {
+  margin-top: $spacer * 2;
+}
+
+.careers-no-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-top: $spacer * 4;
+  padding-bottom: $spacer * 4;
+
+  .careers-no-result-glyph {
+    width: $spacer * 11;
+    margin-bottom: $spacer * 1.25;
+  }
+
+  .careers-no-result-title {
+    font-size: 1.375 * $font-size-base;
+    font-weight: $font-weight-semi-bold;
+    color: $accent;
+    line-height: normal;
+    margin-bottom: 0;
+  }
+
+  .careers-no-result-text {
+    margin-top: $spacer * .5;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
