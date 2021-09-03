@@ -13,7 +13,6 @@ function App() {
   return (
     <>
       <Toaster />
-
       <Switch>
         <PrivateRoutes path="/dashboard" component={Dashboard} />
 
